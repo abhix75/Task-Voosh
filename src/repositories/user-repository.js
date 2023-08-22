@@ -8,8 +8,8 @@ class UserRepository extends CrudRepository {
         super(User);
     }
 
-    async getUserBynumber(number) {
-        const user = await User.findOne({where: { number:number}});
+    async getUserBynumber(phone_number) {
+        const user = await User.findOne({where: { phone_number:phone_number}});
         return user;
     }
 }
