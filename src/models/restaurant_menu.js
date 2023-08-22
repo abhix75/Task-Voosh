@@ -13,6 +13,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   Restaurant_Menu.init(
     {
+      MenuID:{
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        unique:true,
+      },
       FoodMenu: {
         type: DataTypes.STRING,
         allowNull: false,

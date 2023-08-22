@@ -1,4 +1,7 @@
 'use strict';
+
+const { sequelize } = require('../models');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -9,6 +12,12 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      MenuID:{
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        unique:true,
+      },
+   
       FoodMenu: {
         type: Sequelize.STRING,
         allowNull:false,
@@ -18,6 +27,7 @@ module.exports = {
           isAlphanumeric:true,
         }
       },
+  
       Capacity: {
         type: Sequelize.INTEGER,
         defaultValue:"0",

@@ -56,6 +56,16 @@ async function getMenu(id)
        throw new AppError("Not Able to get  the Airplane objects",StatusCodes.INTERNAL_SERVER_ERROR); 
     }
 }
+async function updatefood(data) {
+    try {
+        console.log("data",data)
+        const response = await restaurantRepository.updateRemainingfood(data.menuId, data.quantity, data.dec);
+        return response;
+    } catch(error) {
+        console.log(error);
+        throw new AppError('Cannot update data of the flight', StatusCodes.INTERNAL_SERVER_ERROR);
+    }
+}
 
 
 module.exports=
@@ -63,5 +73,6 @@ module.exports=
     createMenu,
     getMenus,
     getMenu,
+    updatefood
     
 }
