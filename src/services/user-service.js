@@ -10,7 +10,9 @@ async function create(data)
 {
     try {
         const user = await userRepository.create(data);
-        return user;
+        
+    return user;
+       
 
     } catch (error) {
           console.log(error);
